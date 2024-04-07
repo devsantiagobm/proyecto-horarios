@@ -1,6 +1,9 @@
 import express from "express";
+import cors from "cors"
 
 const app = express();
+
+app.use(cors())
 
 const cosmetologos = [
     {
@@ -214,6 +217,7 @@ const cosmetologos = [
         ]
     }
 ];
+
 
 app.use("/cosmetologos/horario/:id", function (req, res) {
     const { id } = req.params;
