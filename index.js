@@ -72,7 +72,7 @@ const cosmetologos = [
     {
         id: 4,
         nombre: "Mateo López",
-        avatar: "https://images.pexels.com/photos/1085517/pexels-photo-1085517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        avatar: "https://images.pexels.com/photos/59576/pexels-photo-59576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         horarios: [
             {
                 fecha: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' }),
@@ -99,7 +99,7 @@ const cosmetologos = [
                 fecha: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' }),
                 horaInicio: "13:00",
                 horaFin: "15:00",
-                paciente: "Daniela López",
+                paciente: "Daniel López",
                 servicio: "Depilación"
             },
             {
@@ -176,7 +176,7 @@ const cosmetologos = [
     },
     {
         id: 9,
-        nombre: "Andrés Felipe Morales",
+        nombre: "Andrea Felipe Morales",
         avatar: "https://images.pexels.com/photos/8487441/pexels-photo-8487441.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         horarios: [
             {
@@ -218,15 +218,6 @@ const cosmetologos = [
     }
 ];
 
-
-app.use("/cosmetologos/horario/:id", function (req, res) {
-    const { id } = req.params;
-    const cosmetologo = cosmetologos.find((cosmetologo) => cosmetologo.id == id);
-
-    if (!cosmetologo) return res.status(400).json({ mensaje: "Este cosmetologo no existe" })
-
-    return res.json({ cosmetologo })
-})
 
 app.use("/cosmetologos", function (req, res) {
     return res.json({ cosmetologos });
