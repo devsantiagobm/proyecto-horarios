@@ -229,8 +229,7 @@ app.use("/cosmetologos/horario/:id", function (req, res) {
 })
 
 app.use("/cosmetologos", function (req, res) {
-    const cosmetologosSinHorario = cosmetologos.map(({ horarios, ...cosmetologo }) => ({ ...cosmetologo }))
-    return res.json({ cosmetologos: cosmetologosSinHorario });
+    return res.json({ cosmetologos });
 })
 
 
